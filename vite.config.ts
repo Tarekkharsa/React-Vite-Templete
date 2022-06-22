@@ -1,13 +1,27 @@
-import * as path from 'path'
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import * as path from 'path';
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+const commonConfig = {
+    plugins: [react()],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
-});
+}
+export default defineConfig(({ command, mode }) => {
+  if (command === 'serve') {
+    return {
+      ...commonConfig,
+      // dev specific config
+    }
+  } else {
+    // command === 'build'
+    return {
+      ...commonConfig,
+      // build specific config
+    }
+  }
+})
