@@ -23,11 +23,25 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb-typescript',
-    'plugin:prettier/recommended', // Make sure this is always the last element in the array.
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   plugins: ['simple-import-sort', 'prettier'],
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'prettier/prettier': [
+      'error',
+      {},
+      {
+        usePrettierrc: true,
+      },
+    ],
     'react/require-default-props': 'off',
     'import/extensions': 'off',
     'jsx-a11y/interactive-supports-focus': 'off',
@@ -39,7 +53,10 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': [
       'warn',
-      { ignoreTypeValueShadow: true, ignoreFunctionTypeParameterNameValueShadow: true },
+      {
+        ignoreTypeValueShadow: true,
+        ignoreFunctionTypeParameterNameValueShadow: true,
+      },
     ],
     'import/no-extraneous-dependencies': 'off',
     'no-console': 'off',
