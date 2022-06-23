@@ -1,9 +1,9 @@
-import Test from '@/components/test';
+import BaseTemplate from '@/components/templates/base/BaseTemplate';
 
 const App = () => {
   return (
     <div className="App">
-      <Test />
+      <BaseTemplate sampleTextProp="testddd" />
       {import.meta.env.VITE_MESSAGE}
     </div>
   );
