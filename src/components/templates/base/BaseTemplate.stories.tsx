@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import BaseTemplate, { IBaseTemplate } from './BaseTemplate';

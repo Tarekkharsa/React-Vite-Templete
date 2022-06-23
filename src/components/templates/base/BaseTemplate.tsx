@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import styles from './BaseTemplate.module.css';
 
 export interface IBaseTemplate {

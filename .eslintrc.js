@@ -48,8 +48,9 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     // '@typescript-eslint/dot-notation': 'off',
     // 'jsx-a11y/accessible-emoji': 'off',
-    // 'react/prop-types': 'off',
-    // '@typescript-eslint/explicit-function-return-type': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': [
       'warn',
