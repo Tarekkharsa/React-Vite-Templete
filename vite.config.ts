@@ -10,9 +10,6 @@ const commonConfig = {
       '@': resolve(__dirname, 'src'),
     },
   },
-  esbuild: {
-    jsxInject: `import React from 'react'`,
-  },
 };
 export default defineConfig(({ command, mode }) => {
   if (command === 'serve') {
