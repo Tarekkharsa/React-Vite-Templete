@@ -57,8 +57,7 @@ export default function LoginForm({ onSubmit }) {
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        sx={{ my: 2 }}
-      >
+        sx={{ my: 2 }}>
         <CustomCheckbox
           label="remember_me"
           name="remember"
@@ -75,8 +74,7 @@ export default function LoginForm({ onSubmit }) {
         size="large"
         type="submit"
         variant="contained"
-        loading={isLoading}
-      >
+        loading={isLoading}>
         <FormattedMessage id="login" />
       </LoadingButton>
     </form>

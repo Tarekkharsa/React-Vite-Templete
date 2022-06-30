@@ -53,8 +53,7 @@ export default function UserListToolbar({
           color: 'primary.main',
           bgcolor: 'primary.lighter',
         }),
-      }}
-    >
+      }}>
       {numSelected > 0 ? (
         <Typography component="div" variant="subtitle1">
           {numSelected} selected

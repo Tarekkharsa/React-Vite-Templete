@@ -31,8 +31,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
+      {...other}>
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -169,8 +168,7 @@ export default function Profile() {
           variant="contained"
           component={RouterLink}
           to="/dashboard/profile/edit"
-          startIcon={<Iconify icon="eva:edit-2-outline" />}
-        >
+          startIcon={<Iconify icon="eva:edit-2-outline" />}>
           <FormattedMessage id="edit_account" />
         </Button>
       </EditSectionStyle>

@@ -152,8 +152,7 @@ function NotificationItem({ notification }: NotificationItemProps) {
         ...(notification.isUnRead && {
           bgcolor: 'action.selected',
         }),
-      }}
-    >
+      }}>
       <ListItemAvatar>
         <Avatar sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
       </ListItemAvatar>
@@ -167,8 +166,7 @@ function NotificationItem({ notification }: NotificationItemProps) {
               display: 'flex',
               alignItems: 'center',
               color: 'text.disabled',
-            }}
-          >
+            }}>
             <Iconify icon="eva:clock-fill" sx={{ mr: 0.5, width: 16, height: 16 }} />
             {formatDistanceToNow(new Date(notification.createdAt))}
           </Typography>
@@ -213,8 +211,7 @@ export default function NotificationsPopover() {
             bgcolor: (theme) =>
               alpha(theme.palette.primary.main, theme.palette.action.focusOpacity),
           }),
-        }}
-      >
+        }}>
         <Badge badgeContent={totalUnRead} color="error">
           <Iconify icon="eva:bell-fill" width={20} height={20} />
         </Badge>
@@ -224,8 +221,7 @@ export default function NotificationsPopover() {
         open={open}
         onClose={handleClose}
         anchorEl={anchorRef.current}
-        sx={{ width: 360 }}
-      >
+        sx={{ width: 360 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', py: 2, px: 2.5 }}>
           <Box sx={{ flexGrow: 1 }}>
             <Typography variant="subtitle1">Notifications</Typography>
@@ -251,12 +247,10 @@ export default function NotificationsPopover() {
             subheader={
               <ListSubheader
                 disableSticky
-                sx={{ py: 1, px: 2.5, typography: 'overline' }}
-              >
+                sx={{ py: 1, px: 2.5, typography: 'overline' }}>
                 New
               </ListSubheader>
-            }
-          >
+            }>
             {notifications.slice(0, 2).map((notification) => (
               <NotificationItem key={notification.id} notification={notification} />
             ))}
@@ -267,12 +261,10 @@ export default function NotificationsPopover() {
             subheader={
               <ListSubheader
                 disableSticky
-                sx={{ py: 1, px: 2.5, typography: 'overline' }}
-              >
+                sx={{ py: 1, px: 2.5, typography: 'overline' }}>
                 Before that
               </ListSubheader>
-            }
-          >
+            }>
             {notifications.slice(2, 5).map((notification) => (
               <NotificationItem key={notification.id} notification={notification} />
             ))}

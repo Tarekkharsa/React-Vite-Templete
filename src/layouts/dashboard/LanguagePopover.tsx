@@ -54,8 +54,7 @@ export default function LanguagePopover() {
             bgcolor: (theme) =>
               alpha(theme.palette.primary.main, theme.palette.action.focusOpacity),
           }),
-        }}
-      >
+        }}>
         <img
           style={{ width: lang === 'ar' ? '80%' : '' }}
           src={lang === 'en' ? LANGS[0].icon : LANGS[1].icon}
@@ -70,8 +69,7 @@ export default function LanguagePopover() {
               key={option.value}
               selected={option.value === lang}
               onClick={() => handleChange(option.value)}
-              sx={{ py: 1, px: 2.5 }}
-            >
+              sx={{ py: 1, px: 2.5 }}>
               <ListItemIcon>
                 <Box component="img" alt={option.label} src={option.icon} />
               </ListItemIcon>

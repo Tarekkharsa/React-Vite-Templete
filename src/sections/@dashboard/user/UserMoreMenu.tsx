@@ -28,8 +28,7 @@ export default function UserMoreMenu({ id }) {
           sx: { width: 200, maxWidth: '100%' },
         }}
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      >
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
         <MenuItem sx={{ color: 'text.secondary' }} onClick={() => navigate(`${id}/show`)}>
           <ListItemIcon>
             <Iconify icon="carbon:view" width={24} height={24} />

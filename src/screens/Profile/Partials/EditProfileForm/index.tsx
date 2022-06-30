@@ -64,8 +64,7 @@ export default function EditProfileForm() {
           size="large"
           variant="contained"
           style={{ marginLeft: '1rem' }}
-          onClick={() => navigate(-1)}
-        >
+          onClick={() => navigate(-1)}>
           <FormattedMessage id="cancel" />
         </LoadingButton>
         <LoadingButton size="large" type="submit" variant="contained" loading={false}>

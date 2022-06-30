@@ -22,8 +22,7 @@ export default function MotionContainer({
       initial={false}
       animate={open ? 'animate' : 'exit'}
       variants={varWrapEnter}
-      {...other}
-    >
+      {...other}>
       {children}
     </Box>
   );

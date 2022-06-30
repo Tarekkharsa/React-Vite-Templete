@@ -44,8 +44,7 @@ export default function MenuPopover({ children, sx, ...other }: MenuPopoverProps
           ...sx,
         },
       }}
-      {...other}
-    >
+      {...other}>
       <ArrowStyle className="arrow" />
 
       {children}
