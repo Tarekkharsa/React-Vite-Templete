@@ -1,10 +1,10 @@
 // material
-import { Box } from '@mui/material';
+import { Box, SxProps } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 type LogoProps = {
-  sx: any;
+  sx?: SxProps;
 };
 
 export default function Logo({ sx }: LogoProps) {

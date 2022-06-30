@@ -1,5 +1,5 @@
 // material
-import { Popover } from '@mui/material';
+import { Popover, PopoverProps } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
@@ -23,12 +23,7 @@ const ArrowStyle = styled('span')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-type MenuPopoverProps = {
-  children: React.ReactNode;
-  sx: any;
-};
-
-export default function MenuPopover({ children, sx, ...other }: MenuPopoverProps) {
+export default function MenuPopover({ children, sx, ...other }: PopoverProps) {
   return (
     <Popover
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}

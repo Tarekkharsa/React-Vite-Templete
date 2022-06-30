@@ -5,7 +5,7 @@ import { atomTheme } from '@/config';
 export default () => {
   const [theme, setTheme] = useRecoilState(atomTheme);
 
-  const saveTheme = (chosenTheme) => {
+  const saveTheme = (chosenTheme: string) => {
     setTheme(chosenTheme);
     window.localStorage.setItem('THEME', chosenTheme);
   };

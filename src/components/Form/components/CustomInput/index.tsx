@@ -2,7 +2,17 @@ import { TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';
 
-function CustomInput({ name, label, control, errors }: any) {
+function CustomInput({
+  name,
+  label,
+  control,
+  errors,
+}: {
+  name: string;
+  label: string;
+  control: any;
+  errors: any;
+}) {
   return (
     <Controller
       render={({ field: { onChange, onBlur, value, ref } }) => (

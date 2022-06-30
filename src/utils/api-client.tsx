@@ -11,7 +11,7 @@ type ClientProps = {
 
 const apiURL = import.meta.env.REACT_APP_API_URL;
 async function client(
-  endpoint: Promise<any>,
+  endpoint: string,
   { data, token, headers: customHeaders, ...customConfig } = {} as ClientProps
 ) {
   const queryCache = new QueryCache();

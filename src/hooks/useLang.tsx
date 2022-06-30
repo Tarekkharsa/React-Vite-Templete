@@ -5,9 +5,8 @@ import { atomLang } from '@/config';
 export default () => {
   const [lang] = useRecoilState(atomLang);
 
-  const saveLang = (chosenLang) => {
+  const saveLang = (chosenLang: string) => {
     window.location.reload();
-    // setLang(chosenLang)
     window.localStorage.setItem('lang', chosenLang);
   };
 
