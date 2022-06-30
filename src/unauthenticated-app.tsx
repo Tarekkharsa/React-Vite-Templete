@@ -43,18 +43,6 @@ function UnauthenticatedApp() {
   const { login } = useAuth();
   return (
     <RootStyle title="Login | Minimal-UI">
-      {/* <AuthLayout>
-        Don’t have an account? &nbsp;
-        <Link
-          underline="none"
-          variant="subtitle2"
-          component={RouterLink}
-          to="/register"
-        >
-          Get started
-        </Link>
-      </AuthLayout> */}
-
       <SectionStyle sx={{ display: { xs: 'none', md: 'flex' } }}>
         <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
           <FormattedMessage id="welecome_back" />
@@ -72,28 +60,7 @@ function UnauthenticatedApp() {
               <FormattedMessage id="enter_your_details_below" />
             </Typography>
           </Stack>
-          {/* <AuthSocial /> */}
-
           <LoginForm onSubmit={login} />
-
-          {/* <Typography
-            variant="body2"
-            align="center"
-            sx={{
-              mt: 3,
-              display: {sm: 'none'},
-            }}
-          >
-            Don’t have an account?&nbsp;
-            <Link
-              variant="subtitle2"
-              component={RouterLink}
-              to="register"
-              underline="hover"
-            >
-              Get started
-            </Link>
-          </Typography> */}
         </ContentStyle>
       </Container>
     </RootStyle>

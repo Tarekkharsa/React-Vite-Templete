@@ -13,7 +13,11 @@ import { useAsync } from '@/hooks/useAsync';
 
 // ----------------------------------------------------------------------
 
-export default function LoginForm({ onSubmit }) {
+export default function LoginForm({
+  onSubmit,
+}: {
+  onSubmit: (data: { email: string; password: string }) => Promise<void>;
+}) {
   const { isLoading, isError, error, run } = useAsync();
 
   const LoginSchema = Yup.object().shape({
@@ -36,7 +40,7 @@ export default function LoginForm({ onSubmit }) {
     },
   });
 
-  const onSubmitForm = (data) => {
+  const onSubmitForm = (data: { email: string; password: string }) => {
     const { email, password } = data;
     run(onSubmit({ email, password }));
   };
@@ -44,7 +48,7 @@ export default function LoginForm({ onSubmit }) {
   return (
     <form autoComplete="off" noValidate onSubmit={handleSubmit(onSubmitForm)}>
       <Stack spacing={3}>
-        {isError ? <Alert severity="error">{error.message}</Alert> : null}
+        {isError ? <Alert severity="error">{error?.message}</Alert> : null}
         <CustomInput label="email" name="email" control={control} errors={errors} />
         <InputPassword
           label="password"
@@ -58,12 +62,7 @@ export default function LoginForm({ onSubmit }) {
         alignItems="center"
         justifyContent="space-between"
         sx={{ my: 2 }}>
-        <CustomCheckbox
-          label="remember_me"
-          name="remember"
-          control={control}
-          errors={errors}
-        />
+        <CustomCheckbox label="remember_me" name="remember" control={control} />
         <Link component={RouterLink} variant="subtitle2" to="#" underline="hover">
           <FormattedMessage id="forgot_password" />
         </Link>

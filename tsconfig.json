@@ -22,6 +22,7 @@
     "jsxImportSource": "@emotion/react",
     "typeRoots": ["vitest/globals"]
   },
+  "exclude": ["node_modules"],
   "include": ["./src", "*.ts", "*.tsx", "*.json"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

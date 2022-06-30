@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 // components
-import Logo from '../components/Logo';
+import Logo from '@/components/Logo';
 
 // ----------------------------------------------------------------------
 

@@ -27,8 +27,12 @@ async function bootstrapAppData() {
 type ContextProps = {
   user: {
     token: string;
+    image?: string;
+    userName?: string;
+    email?: string;
+    id?: string;
   };
-  login: () => void;
+  login: () => Promise<void>;
   logout: () => void;
   register: () => void;
 };
@@ -55,14 +59,15 @@ function AuthProvider(props: any) {
   }, [run]);
 
   const login = useCallback(
-    (form) =>
+    (form: { email: string; password: string }) =>
       auth.login(form).then((userRes) => {
         setData(userRes);
       }),
     [setData]
   );
   const register = useCallback(
-    (form) => auth.register(form).then((userRes) => setData(userRes)),
+    (form: { email: string; password: string }) =>
+      auth.register(form).then((userRes) => setData(userRes)),
     [setData]
   );
   const logout = useCallback(() => {
@@ -101,9 +106,9 @@ function useAuth() {
 
 function useClient() {
   const { user } = useAuth();
-  const token: string = user?.token;
+  const token = user?.token;
   return useCallback(
-    (endpoint: Function, config: object) => client(endpoint, { ...config, token }),
+    (endpoint: string, config: any) => client(endpoint, { ...config, token }),
     [token]
   );
 }
