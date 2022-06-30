@@ -1,11 +1,12 @@
 // material
+import { CustomTheme } from '@/theme/ThemeTypes';
 import { GlobalStyles } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
 export function BaseOptionChartStyle() {
-  const theme = useTheme();
+  const theme: CustomTheme = useTheme();
 
   const background = {
     backdropFilter: 'blur(6px)',
@@ -38,7 +39,7 @@ export function BaseOptionChartStyle() {
               border: 0,
               textAlign: 'center',
               fontWeight: theme.typography.fontWeightBold,
-              backgroundColor: theme.palette.grey[500_16],
+              backgroundColor: theme.palette.grey['500_16'],
               color:
                 theme.palette.text[
                   theme.palette.mode === 'light' ? 'secondary' : 'primary'
@@ -67,7 +68,7 @@ export function BaseOptionChartStyle() {
 }
 
 export default function BaseOptionChart() {
-  const theme = useTheme();
+  const theme: CustomTheme = useTheme();
 
   const LABEL_TOTAL = {
     show: true,
@@ -202,7 +203,7 @@ export default function BaseOptionChart() {
       radialBar: {
         track: {
           strokeWidth: '100%',
-          background: theme.palette.grey[500_16],
+          background: theme.palette.grey['500_16'],
         },
         dataLabels: {
           value: LABEL_VALUE,

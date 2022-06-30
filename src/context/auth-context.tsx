@@ -108,7 +108,7 @@ function useClient() {
   const { user } = useAuth();
   const token = user?.token;
   return useCallback(
-    (endpoint: string, config: any) => client(endpoint, { ...config, token }),
+    (endpoint: string, config?: any) => client(endpoint, { ...config, token }),
     [token]
   );
 }

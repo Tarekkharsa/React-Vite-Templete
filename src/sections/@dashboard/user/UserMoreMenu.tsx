@@ -9,7 +9,7 @@ import Iconify from '@/components/Iconify';
 
 // ----------------------------------------------------------------------
 
-export default function UserMoreMenu({ id }) {
+export default function UserMoreMenu({ id }: { id: string }) {
   const ref = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();

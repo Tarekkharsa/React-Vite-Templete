@@ -78,7 +78,7 @@ const NOTIFICATIONS = [
   },
 ];
 
-function renderContent(notification) {
+function renderContent(notification: NotificationItemProps) {
   const title = (
     <Typography variant="subtitle2">
       {notification.title}
@@ -127,17 +127,16 @@ function renderContent(notification) {
 }
 
 type NotificationItemProps = {
-  notification: {
-    id: string;
-    isUnRead: boolean;
-    title: string;
-    type: string;
-    avatar: string;
-    description: string;
-  };
+  id: string;
+  isUnRead: boolean;
+  title: string;
+  type: string;
+  avatar: string | null;
+  description: string;
+  createdAt: Date | string;
 };
 
-function NotificationItem({ notification }: NotificationItemProps) {
+function NotificationItem({ notification }: { notification: NotificationItemProps }) {
   const { avatar, title } = renderContent(notification);
 
   return (

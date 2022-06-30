@@ -9,4 +9,15 @@ export type CustomThemeOptions = ThemeOptions & {
 
 export type CustomTheme = Theme & {
   customShadows: CustomShadow;
+  palette:
+    | {
+        chart?: ChartTheme;
+        grey: {
+          '500_16': string;
+          '500_32': string;
+          '500_56': string;
+          '500_12': string;
+        };
+      }
+    | any;
 };

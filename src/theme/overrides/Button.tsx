@@ -28,7 +28,7 @@ export default function Button(theme: CustomTheme) {
           boxShadow: theme.customShadows.secondary,
         },
         outlinedInherit: {
-          border: `1px solid ${theme.palette.grey[500_32]}`,
+          border: `1px solid ${theme.palette.grey['500_32']}`,
           '&:hover': {
             backgroundColor: theme.palette.action.hover,
           },
