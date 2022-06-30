@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function Autocomplete(theme) {
+import { CustomTheme } from '@/theme/ThemeTypes';
+
+export default function Autocomplete(theme: CustomTheme) {
   return {
     MuiAutocomplete: {
       styleOverrides: {

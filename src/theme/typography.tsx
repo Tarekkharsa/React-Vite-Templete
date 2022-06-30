@@ -1,10 +1,18 @@
 // ----------------------------------------------------------------------
 
-function pxToRem(value) {
+import { TypographyOptions } from '@mui/material/styles/createTypography';
+
+function pxToRem(value: number) {
   return `${value / 16}rem`;
 }
 
-function responsiveFontSizes({ sm, md, lg }) {
+type ResponsiveFontSizeProps = {
+  sm: number;
+  md: number;
+  lg: number;
+};
+
+function responsiveFontSizes({ sm, md, lg }: ResponsiveFontSizeProps) {
   return {
     '@media (min-width:600px)': {
       fontSize: pxToRem(sm),
@@ -20,7 +28,7 @@ function responsiveFontSizes({ sm, md, lg }) {
 
 const FONT_PRIMARY = "'Cairo', sans-serif";
 
-const typography = {
+const typography: TypographyOptions = {
   fontFamily: FONT_PRIMARY,
   fontWeightRegular: 400,
   fontWeightMedium: 600,

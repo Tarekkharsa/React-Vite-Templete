@@ -1,5 +1,7 @@
 import { merge } from 'lodash';
 
+import { CustomTheme } from '@/theme/ThemeTypes';
+
 import Autocomplete from './Autocomplete';
 import Backdrop from './Backdrop';
 import Button from './Button';
@@ -13,11 +15,11 @@ import Typography from './Typography';
 
 // ----------------------------------------------------------------------
 
-export default function ComponentsOverrides(theme) {
+export default function ComponentsOverrides(theme: CustomTheme) {
   return merge(
     Card(theme),
     Lists(theme),
-    Paper(theme),
+    Paper(),
     Input(theme),
     Button(theme),
     Tooltip(theme),

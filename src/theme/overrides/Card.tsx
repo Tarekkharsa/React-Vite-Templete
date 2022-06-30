@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function Card(theme) {
+import { CustomTheme } from '@/theme/ThemeTypes';
+
+export default function Card(theme: CustomTheme) {
   return {
     MuiCard: {
       styleOverrides: {

@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function Lists(theme) {
+import { CustomTheme } from '@/theme/ThemeTypes';
+
+export default function Lists(theme: CustomTheme) {
   return {
     MuiListItemIcon: {
       styleOverrides: {

@@ -3,12 +3,14 @@ import { CacheProvider } from '@emotion/react';
 // material
 import { CssBaseline } from '@mui/material';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import { ThemeOptions } from '@mui/material/styles/createTheme';
 import { useLayoutEffect, useMemo } from 'react';
 import { prefixer } from 'stylis';
 import rtlPlugin from 'stylis-plugin-rtl';
 
 import useDarkMode from '@/hooks/useDarkMode';
 import useLang from '@/hooks/useLang';
+import { CustomTheme, CustomThemeOptions } from '@/theme/ThemeTypes';
 
 //
 import componentsOverride from './overrides';
@@ -29,6 +31,11 @@ const cacheRtl = createCache({
 });
 // ----------------------------------------------------------------------
 
+function createCustomTheme(customOption: CustomThemeOptions): CustomTheme {
+  const theme = createTheme(customOption as ThemeOptions);
+  return { ...theme, customShadows: customOption.customShadows } as CustomTheme;
+}
+
 function ThemeConfig({ children }: any) {
   const { theme: themeInfo } = useDarkMode();
   const { lang } = useLang();
@@ -37,8 +44,8 @@ function ThemeConfig({ children }: any) {
     document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
   }, []);
 
-  const themeOptions = useMemo(
-    () => ({
+  const themeOptions: CustomThemeOptions = useMemo(
+    (): CustomThemeOptions => ({
       direction: lang === 'ar' ? 'rtl' : 'ltr',
       palette: themeInfo === 'dark' ? dark : light,
       shape: { borderRadius: 8 },
@@ -49,13 +56,13 @@ function ThemeConfig({ children }: any) {
     [themeInfo, lang]
   );
 
-  const theme = createTheme(themeOptions);
-  theme.components = componentsOverride(theme);
+  const customTheme: CustomTheme = createCustomTheme(themeOptions);
+  customTheme.components = componentsOverride(customTheme);
 
   return (
     <StyledEngineProvider injectFirst>
       <CacheProvider value={lang === 'ar' ? cacheRtl : cacheLtr}>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={customTheme}>
           <CssBaseline />
           {children}
         </ThemeProvider>
