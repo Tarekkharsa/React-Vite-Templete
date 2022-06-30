@@ -28,13 +28,15 @@ module.exports = {
   ],
   plugins: ['simple-import-sort', 'prettier'],
   rules: {
-    'react/function-component-definition': [
-      2,
-      {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
-    ],
+    'react/function-component-definition': 'off',
+    // 'react/function-component-definition': [
+    //   2,
+    //   {
+    //     namedComponents: 'arrow-function',
+    //     unnamedComponents: 'arrow-function',
+    //     namedComponents: 'function-declaration',
+    //   },
+    // ],
     'prettier/prettier': [
       'error',
       {},
@@ -52,6 +54,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'no-shadow': 'off',
+    'prefer-promise-reject-errors': 'off',
     '@typescript-eslint/no-shadow': [
       'warn',
       {

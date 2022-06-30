@@ -7,6 +7,7 @@
     "./src",
     "*.ts",
     "*.tsx",
+    "*.json",
     // these are the eslint-only inclusions
     ".eslintrc.js"
   ]
