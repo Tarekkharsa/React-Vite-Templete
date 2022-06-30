@@ -1,6 +1,7 @@
 // material
-import { CustomTheme } from '@/theme/ThemeTypes';
 import { alpha, styled } from '@mui/material/styles';
+
+import { CustomTheme } from '@/theme/ThemeTypes';
 
 // ----------------------------------------------------------------------
 
