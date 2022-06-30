@@ -1,4 +1,5 @@
 import renderer from 'react-test-renderer';
+import { expect, test } from 'vitest';
 
 import Link from '@/components/Link/Link';
 

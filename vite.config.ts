@@ -1,9 +1,10 @@
+/// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig, UserConfigExport } from 'vite';
 
 // https://vitejs.dev/config/
-const commonConfig = {
+const commonConfig: UserConfigExport = {
   plugins: [
     react({
       jsxRuntime: 'automatic',
@@ -28,7 +29,7 @@ const commonConfig = {
   },
 };
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ command }) => {
   if (command === 'serve') {
     return {
       ...commonConfig,
