@@ -85,7 +85,7 @@ function AuthProvider(props: any) {
     return <FullPageSpinner />;
   }
 
-  if (isError) {
+  if (isError && !!error) {
     return <FullPageErrorFallback error={error} />;
   }
 

@@ -48,7 +48,7 @@ export default function DashboardSidebar({
 }: DashboardSidebarProps) {
   const { pathname } = useLocation();
   const { user } = useAuth();
-  const isDesktop = useResponsive('up', 'lg');
+  const isDesktop = useResponsive({ query: 'up', key: 'lg' });
 
   useEffect(() => {
     if (isOpenSidebar) {
