@@ -8,33 +8,32 @@ const Root = styled('div')(({ theme }) => ({
   marginLeft: theme.spacing(2.5),
 }));
 
+type EventType = React.MouseEvent<HTMLButtonElement, MouseEvent>;
 type TablePaginationActionsProps = {
   count: number;
   page: number;
   rowsPerPage: number;
-  onChangePage: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    page: number
-  ) => void;
+  // rowsPerPageOptions: number[];
+  // colSpan: number;
+  onChangePage: (event: EventType, page: number) => void;
 };
-
 function TablePaginationActions(props: TablePaginationActionsProps) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onChangePage } = props;
 
-  const handleFirstPageButtonClick = (event) => {
+  const handleFirstPageButtonClick = (event: EventType) => {
     onChangePage(event, 0);
   };
 
-  const handleBackButtonClick = (event) => {
+  const handleBackButtonClick = (event: EventType) => {
     onChangePage(event, page - 1);
   };
 
-  const handleNextButtonClick = (event) => {
+  const handleNextButtonClick = (event: EventType) => {
     onChangePage(event, page + 1);
   };
 
-  const handleLastPageButtonClick = (event) => {
+  const handleLastPageButtonClick = (event: EventType) => {
     onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
 

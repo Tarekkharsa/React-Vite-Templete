@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useAsyncDebounce } from 'react-table';
 
 import Iconify from '@/components/Iconify';
+import { GlobalFilterProps } from '@/components/ReactTable/Partials/CustomToolbarProps';
+import { CustomTheme } from '@/theme/ThemeTypes';
 
 const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
   width: 240,
@@ -11,14 +13,18 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
     easing: theme.transitions.easing.easeInOut,
     duration: theme.transitions.duration.shorter,
   }),
-  '&.Mui-focused': { width: 320, boxShadow: theme.customShadows.z8 },
+  '&.Mui-focused': { width: 320, boxShadow: (theme as CustomTheme).customShadows.z8 },
   '& fieldset': {
     borderWidth: `1px !important`,
-    borderColor: `${theme.palette.grey[500_32]} !important`,
+    borderColor: `${(theme as CustomTheme).palette.grey['500_32']} !important`,
   },
 }));
 
-export function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
+export function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}: GlobalFilterProps) {
   const count = preGlobalFilteredRows.length;
   const [value, setValue] = useState(globalFilter);
   const onChange = useAsyncDebounce((val) => {

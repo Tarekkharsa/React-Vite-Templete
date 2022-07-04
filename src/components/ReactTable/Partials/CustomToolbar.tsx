@@ -3,6 +3,8 @@ import { IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { FormattedMessage } from 'react-intl';
 
+import { CustomToolbarProps } from '@/components/ReactTable/Partials/CustomToolbarProps';
+
 // component
 import Iconify from '../../Iconify';
 import { GlobalFilter } from './ReactTableFilters';
@@ -17,14 +19,6 @@ const RootStyle = styled(Toolbar)(({ theme }) => ({
 }));
 
 // ----------------------------------------------------------------------
-
-type CustomToolbarProps = {
-  selectedRows: any[];
-  onDelete: (rows: any[]) => void;
-  preGlobalFilteredRows: any[];
-  globalFilter: string;
-  setGlobalFilter: (filter: string) => void;
-};
 
 export default function CustomToolbar({
   selectedRows,

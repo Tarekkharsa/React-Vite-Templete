@@ -51,7 +51,11 @@ function ModalSpinner() {
   );
 }
 
-function FullPageErrorFallback({ error }) {
+type FullPageErrorFallbackProps = {
+  error: Error;
+};
+
+function FullPageErrorFallback({ error }: FullPageErrorFallbackProps) {
   return (
     <div
       role="alert"

@@ -2,6 +2,8 @@
 import { Popover, PopoverProps } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 
+import { CustomTheme } from '@/theme/ThemeTypes';
+
 // ----------------------------------------------------------------------
 
 const ArrowStyle = styled('span')(({ theme }) => ({
@@ -33,8 +35,8 @@ export default function MenuPopover({ children, sx, ...other }: PopoverProps) {
           mt: 1.5,
           ml: 0.5,
           overflow: 'inherit',
-          boxShadow: (theme) => theme.customShadows.z20,
-          border: (theme) => `solid 1px ${theme.palette.grey[500_8]}`,
+          boxShadow: (theme) => (theme as CustomTheme).customShadows.z20,
+          border: (theme) => `solid 1px ${(theme as CustomTheme).palette.grey['500_8']}`,
           width: 200,
           ...sx,
         },
