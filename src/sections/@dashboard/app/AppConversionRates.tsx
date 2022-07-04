@@ -7,6 +7,7 @@ import ReactApexChart from 'react-apexcharts';
 import { BaseOptionChart } from '@/components/charts';
 // utils
 import { fNumber } from '@/utils/formatNumber';
+import { ApexOptions } from 'apexcharts';
 
 // ----------------------------------------------------------------------
 
@@ -17,9 +18,9 @@ export default function AppConversionRates() {
     tooltip: {
       marker: { show: false },
       y: {
-        formatter: (seriesName) => fNumber(seriesName),
+        formatter: (value: number) => fNumber(value),
         title: {
-          formatter: (seriesName) => `#${seriesName}`,
+          formatter: (seriesName: string) => `#${seriesName}`,
         },
       },
     },
@@ -49,7 +50,7 @@ export default function AppConversionRates() {
         <ReactApexChart
           type="bar"
           series={CHART_DATA}
-          options={chartOptions}
+          options={chartOptions as unknown as ApexOptions}
           height={364}
         />
       </Box>

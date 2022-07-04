@@ -74,7 +74,8 @@ export default function AccountPopover() {
               bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72),
             },
           }),
-        }}>
+        }}
+      >
         <Avatar
           src={import.meta.env.VITE_REACT_APP_STORAGEURL_API_URL + user.image}
           alt="photoURL"
@@ -85,7 +86,8 @@ export default function AccountPopover() {
         open={open}
         onClose={handleClose}
         anchorEl={anchorRef.current}
-        sx={{ width: 220 }}>
+        sx={{ width: 220 }}
+      >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle1" noWrap>
             {user?.userName}
@@ -103,7 +105,8 @@ export default function AccountPopover() {
             to={option.linkTo}
             component={RouterLink}
             onClick={handleClose}
-            sx={{ typography: 'body2', py: 1, px: 2.5 }}>
+            sx={{ typography: 'body2', py: 1, px: 2.5 }}
+          >
             <Iconify
               icon={option.icon}
               sx={{
@@ -124,7 +127,8 @@ export default function AccountPopover() {
             onClick={() => {
               logout();
               navigate('/');
-            }}>
+            }}
+          >
             <FormattedMessage id="logout" />
           </Button>
         </Box>

@@ -67,7 +67,8 @@ export default function DashboardSidebar({
           display: 'flex',
           flexDirection: 'column',
         },
-      }}>
+      }}
+    >
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
         <Logo />
       </Box>
@@ -82,7 +83,8 @@ export default function DashboardSidebar({
             <Box
               sx={{
                 ml: 2,
-              }}>
+              }}
+            >
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
                 {user.userName}
               </Typography>
@@ -106,7 +108,8 @@ export default function DashboardSidebar({
           onClose={onCloseSidebar}
           PaperProps={{
             sx: { width: DRAWER_WIDTH },
-          }}>
+          }}
+        >
           {renderContent}
         </Drawer>
       )}
@@ -122,7 +125,8 @@ export default function DashboardSidebar({
               borderRightStyle: 'dashed',
               right: 0,
             },
-          }}>
+          }}
+        >
           {renderContent}
         </Drawer>
       )}

@@ -20,6 +20,7 @@ import Page from '@/components/Page';
 
 import ChangePassword from './Partials/ChangePassword';
 import Settings from './Partials/Settings';
+import { CustomTheme } from '@/theme/ThemeTypes';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -31,7 +32,8 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -41,7 +43,7 @@ function TabPanel(props) {
   );
 }
 
-function a11yProps(index) {
+function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
@@ -55,7 +57,7 @@ const AccountDetailsStyle = styled(List)(({ theme }) => ({
   flexDirection: 'column',
   padding: theme.spacing(2, 2.5),
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[500_12],
+  backgroundColor: (theme as CustomTheme).palette.grey[500_12],
 }));
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -65,7 +67,7 @@ const AccountStyle = styled('div')(({ theme }) => ({
   justifyContent: 'center',
   padding: theme.spacing(2, 2.5),
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[500_12],
+  backgroundColor: (theme as CustomTheme).palette.grey[500_12],
 }));
 
 const AvatarStyle = styled(Avatar)(() => ({
@@ -168,7 +170,8 @@ export default function Profile() {
           variant="contained"
           component={RouterLink}
           to="/dashboard/profile/edit"
-          startIcon={<Iconify icon="eva:edit-2-outline" />}>
+          startIcon={<Iconify icon="eva:edit-2-outline" />}
+        >
           <FormattedMessage id="edit_account" />
         </Button>
       </EditSectionStyle>

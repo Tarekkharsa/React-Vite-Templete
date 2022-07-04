@@ -54,20 +54,23 @@ function ConfirmationModal({
           direction="row"
           alignItems="center"
           justifyContent="flex-end"
-          sx={{ my: 2 }}>
+          sx={{ my: 2 }}
+        >
           <LoadingButton
             onClick={closeConfirmation}
             size="large"
             type="submit"
             variant="contained"
-            sx={{ mr: 2 }}>
+            sx={{ mr: 2 }}
+          >
             <FormattedMessage id="cancel" />
           </LoadingButton>
           <LoadingButton
             size="large"
             variant="contained"
             onClick={onSave}
-            loading={isLoading}>
+            loading={isLoading}
+          >
             <FormattedMessage id="confirm" />
           </LoadingButton>
         </ButtonsWrapper>

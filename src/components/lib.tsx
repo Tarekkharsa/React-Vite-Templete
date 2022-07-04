@@ -28,7 +28,8 @@ function FullPageSpinner() {
         justifyContent: 'center',
         alignItems: 'center',
         color: '#1890FF',
-      }}>
+      }}
+    >
       <Spinner />
     </div>
   );
@@ -45,7 +46,8 @@ function ModalSpinner() {
         justifyContent: 'center',
         alignItems: 'center',
         color: '#1890FF',
-      }}>
+      }}
+    >
       <Spinner />
     </div>
   );
@@ -66,7 +68,8 @@ function FullPageErrorFallback({ error }: FullPageErrorFallbackProps) {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-      }}>
+      }}
+    >
       <p>
         <FormattedMessage id="full_page_error" />
       </p>

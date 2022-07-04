@@ -5,6 +5,7 @@ import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 
 //
+import { ApexOptions } from 'apexcharts';
 import { BaseOptionChart } from '@/components/charts';
 // utils
 import { fNumber } from '@/utils/formatNumber';
@@ -51,9 +52,9 @@ export default function AppCurrentVisits() {
     tooltip: {
       fillSeriesColor: false,
       y: {
-        formatter: (seriesName) => fNumber(seriesName),
+        formatter: (seriesName: number) => fNumber(seriesName),
         title: {
-          formatter: (seriesName) => `#${seriesName}`,
+          formatter: (seriesName: string) => `#${seriesName}`,
         },
       },
     },
@@ -69,7 +70,7 @@ export default function AppCurrentVisits() {
         <ReactApexChart
           type="pie"
           series={CHART_DATA}
-          options={chartOptions}
+          options={chartOptions as unknown as ApexOptions}
           height={280}
         />
       </ChartWrapperStyle>

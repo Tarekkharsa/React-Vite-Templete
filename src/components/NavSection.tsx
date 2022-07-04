@@ -91,7 +91,8 @@ function NavItem({ item, active }: NavItemProps) {
           onClick={handleOpen}
           sx={{
             ...(isActiveRoot && activeRootStyle),
-          }}>
+          }}
+        >
           <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
           <ListItemText disableTypography primary={<FormattedMessage id={title} />} />
           {info && info}
@@ -120,7 +121,8 @@ function NavItem({ item, active }: NavItemProps) {
                   to={ele.path}
                   sx={{
                     ...(isActiveSub && activeSubStyle),
-                  }}>
+                  }}
+                >
                   <ListItemIconStyle>
                     <Box
                       component="span"
@@ -159,7 +161,8 @@ function NavItem({ item, active }: NavItemProps) {
       to={path}
       sx={{
         ...(isActiveRoot && activeRootStyle),
-      }}>
+      }}
+    >
       <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
       <ListItemText disableTypography primary={<FormattedMessage id={title} />} />
       {info && info}

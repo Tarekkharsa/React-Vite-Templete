@@ -42,7 +42,8 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
-        aria-label="first page">
+        aria-label="first page"
+      >
         {theme.direction === 'rtl' ? (
           <Iconify icon="bx:last-page" />
         ) : (
@@ -52,7 +53,8 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleBackButtonClick}
         disabled={page === 0}
-        aria-label="previous page">
+        aria-label="previous page"
+      >
         {theme.direction === 'rtl' ? (
           <Iconify icon="ic:baseline-keyboard-arrow-right" />
         ) : (
@@ -62,7 +64,8 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page">
+        aria-label="next page"
+      >
         {theme.direction === 'rtl' ? (
           <Iconify icon="ic:baseline-keyboard-arrow-left" />
         ) : (
@@ -72,7 +75,8 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleLastPageButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page">
+        aria-label="last page"
+      >
         {theme.direction === 'rtl' ? (
           <Iconify icon="bx:first-page" />
         ) : (

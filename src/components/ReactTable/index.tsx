@@ -149,7 +149,8 @@ function ReactTable({
                 {headerGroup.headers.map((column) => (
                   <TableCell
                     sx={column?.style ? column?.style : null}
-                    {...column.getHeaderProps()}>
+                    {...column.getHeaderProps()}
+                  >
                     {typeof column.render('Header') !== 'object' ? (
                       <FormattedMessage id={column.render('Header')} />
                     ) : (
@@ -170,7 +171,8 @@ function ReactTable({
                       <TableCell
                         sx={cell.column?.style ? cell.column?.style : null}
                         align="left"
-                        {...cell.getCellProps()}>
+                        {...cell.getCellProps()}
+                      >
                         {cell.render('Cell')}
                       </TableCell>
                     );
@@ -201,7 +203,8 @@ function ReactTable({
                   value={pageIndex + 1}
                   onChange={(e) => {
                     gotoPage(e.target.value ? Number(e.target.value) - 1 : 0);
-                  }}>
+                  }}
+                >
                   {pageOptions.map((pageSizeOptions) => (
                     <MenuItem key={pageSizeOptions} value={pageSizeOptions + 1}>
                       {pageSizeOptions + 1}

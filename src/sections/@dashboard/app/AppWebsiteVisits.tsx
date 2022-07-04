@@ -5,6 +5,7 @@ import ReactApexChart from 'react-apexcharts';
 
 //
 import { BaseOptionChart } from '@/components/charts';
+import { ApexOptions } from 'apexcharts';
 
 // ----------------------------------------------------------------------
 
@@ -49,7 +50,7 @@ export default function AppWebsiteVisits() {
       shared: true,
       intersect: false,
       y: {
-        formatter: (y) => {
+        formatter: (y: number) => {
           if (typeof y !== 'undefined') {
             return `${y.toFixed(0)} visits`;
           }
@@ -66,7 +67,7 @@ export default function AppWebsiteVisits() {
         <ReactApexChart
           type="line"
           series={CHART_DATA}
-          options={chartOptions}
+          options={chartOptions as unknown as ApexOptions}
           height={364}
         />
       </Box>

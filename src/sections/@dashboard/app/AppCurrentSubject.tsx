@@ -6,6 +6,7 @@ import ReactApexChart from 'react-apexcharts';
 
 //
 import { BaseOptionChart } from '../../../components/charts';
+import { ApexOptions } from 'apexcharts';
 
 // ----------------------------------------------------------------------
 
@@ -69,7 +70,7 @@ export default function AppCurrentSubject() {
         <ReactApexChart
           type="radar"
           series={CHART_DATA}
-          options={chartOptions}
+          options={chartOptions as ApexOptions}
           height={340}
         />
       </ChartWrapperStyle>

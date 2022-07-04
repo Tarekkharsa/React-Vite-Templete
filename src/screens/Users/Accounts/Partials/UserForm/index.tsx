@@ -35,7 +35,7 @@ export default function UserForm() {
     },
   });
 
-  const onSubmitForm = (data) => {
+  const onSubmitForm = (data: any) => {
     console.log('data', data);
   };
 
@@ -60,7 +60,8 @@ export default function UserForm() {
           onClick={() => navigate(-1)}
           size="large"
           variant="contained"
-          sx={{ mr: 2 }}>
+          sx={{ mr: 2 }}
+        >
           <FormattedMessage id="cancel" />
         </LoadingButton>
         <LoadingButton size="large" type="submit" variant="contained" loading={false}>

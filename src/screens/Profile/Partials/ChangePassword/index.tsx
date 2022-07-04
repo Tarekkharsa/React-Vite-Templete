@@ -27,7 +27,7 @@ export default function ChangePassword() {
     },
   });
 
-  const onSubmitForm = (data) => {
+  const onSubmitForm = (data: any) => {
     console.log('data', data);
   };
 

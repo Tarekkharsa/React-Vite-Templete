@@ -39,7 +39,8 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
         sx={{
           display: { xs: 'none', sm: 'block' },
           mt: { md: -2 },
-        }}>
+        }}
+      >
         {children}
       </Typography>
     </HeaderStyle>

@@ -80,13 +80,15 @@ export default function Login() {
             sx={{
               mt: 3,
               display: { sm: 'none' },
-            }}>
+            }}
+          >
             Don’t have an account?&nbsp;
             <Link
               variant="subtitle2"
               component={RouterLink}
               to="register"
-              underline="hover">
+              underline="hover"
+            >
               Get started
             </Link>
           </Typography>

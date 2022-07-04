@@ -9,6 +9,9 @@ import {
 // material
 import { styled } from '@mui/material/styles';
 
+import * as React from 'react';
+import { CustomTheme } from '@/theme/ThemeTypes';
+
 // component
 import Iconify from '../../../components/Iconify';
 
@@ -27,18 +30,21 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
     easing: theme.transitions.easing.easeInOut,
     duration: theme.transitions.duration.shorter,
   }),
-  '&.Mui-focused': { width: 320, boxShadow: theme.customShadows.z8 },
+  '&.Mui-focused': { width: 320, boxShadow: (theme as CustomTheme).customShadows.z8 },
   '& fieldset': {
     borderWidth: `1px !important`,
-    borderColor: `${theme.palette.grey[500_32]} !important`,
+    borderColor: `${(theme as CustomTheme).palette.grey[500_32]} !important`,
   },
 }));
 
 // ----------------------------------------------------------------------
+type ChangeEventHandler = React.ChangeEventHandler<
+  HTMLTextAreaElement | HTMLInputElement
+>;
 type UserListToolbarProps = {
   numSelected: number;
   filterName: string;
-  onFilterName: Function;
+  onFilterName: ChangeEventHandler;
 };
 
 export default function UserListToolbar({
@@ -53,7 +59,8 @@ export default function UserListToolbar({
           color: 'primary.main',
           bgcolor: 'primary.lighter',
         }),
-      }}>
+      }}
+    >
       {numSelected > 0 ? (
         <Typography component="div" variant="subtitle1">
           {numSelected} selected

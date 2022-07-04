@@ -1,6 +1,8 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/material';
 
-const useStyles = makeStyles((theme) => ({
+import { CustomTheme } from '@/theme/ThemeTypes';
+
+const useStyles = makeStyles((theme: CustomTheme) => ({
   root: {
     width: '100%',
     backgroundColor: 'transparent',

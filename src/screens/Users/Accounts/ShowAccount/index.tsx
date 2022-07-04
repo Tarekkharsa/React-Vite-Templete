@@ -15,6 +15,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import Iconify from '@/components/Iconify';
 import Page from '@/components/Page';
+import { CustomTheme } from '@/theme/ThemeTypes';
 
 const AccountDetailsStyle = styled(List)(({ theme }) => ({
   width: '68%',
@@ -24,7 +25,7 @@ const AccountDetailsStyle = styled(List)(({ theme }) => ({
   flexDirection: 'column',
   padding: ' 0 24px 24px',
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[500_12],
+  backgroundColor: (theme as CustomTheme).palette.grey[500_12],
 }));
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -35,7 +36,7 @@ const AccountStyle = styled('div')(({ theme }) => ({
   justifyContent: 'center',
   padding: theme.spacing(2, 2.5),
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[500_12],
+  backgroundColor: (theme as CustomTheme).palette.grey[500_12],
 }));
 
 const AvatarStyle = styled(Avatar)(() => ({
@@ -82,7 +83,8 @@ export default function ShowAccount() {
             variant="contained"
             component={RouterLink}
             to="/dashboard/users/accounts/1/edit"
-            startIcon={<Iconify icon="eva:edit-fill" />}>
+            startIcon={<Iconify icon="eva:edit-fill" />}
+          >
             <FormattedMessage id="edit_user" />
           </Button>
         </Stack>

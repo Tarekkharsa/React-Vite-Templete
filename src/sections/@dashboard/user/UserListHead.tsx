@@ -25,6 +25,8 @@ type UserListHeadProps = {
   onSelectAllClick: Function;
 };
 
+type EventType = React.MouseEvent<HTMLButtonElement, MouseEvent>;
+
 export default function UserListHead({
   order,
   orderBy,
@@ -34,7 +36,7 @@ export default function UserListHead({
   onRequestSort,
   onSelectAllClick,
 }: UserListHeadProps) {
-  const createSortHandler = (property) => (event) => {
+  const createSortHandler = (property: string) => (event: EventType) => {
     onRequestSort(event, property);
   };
 
@@ -52,7 +54,8 @@ export default function UserListHead({
           <TableCell
             key={headCell.id}
             align={headCell.alignRight ? 'right' : 'left'}
-            sortDirection={orderBy === headCell.id ? order : false}>
+            sortDirection={orderBy === headCell.id ? order : false}
+          >
             <TableSortLabel
               hideSortIcon
               active={orderBy === headCell.id}
