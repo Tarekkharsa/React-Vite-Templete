@@ -121,7 +121,12 @@ function renderContent(notification: NotificationItemProps) {
     };
   }
   return {
-    avatar: <img alt={notification.title} src={notification.avatar} />,
+    avatar: (
+      <img
+        alt={notification.title}
+        src={notification.avatar ? notification.avatar : undefined}
+      />
+    ),
     title,
   };
 }

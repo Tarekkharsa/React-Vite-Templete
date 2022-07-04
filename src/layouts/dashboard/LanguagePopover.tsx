@@ -36,7 +36,7 @@ export default function LanguagePopover() {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleChange = (lan) => {
+  const handleChange = (lan: string) => {
     saveLang(lan);
     setOpen(false);
   };

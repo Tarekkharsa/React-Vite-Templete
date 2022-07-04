@@ -13,6 +13,7 @@ import { useAuth } from '@/context/auth-context';
 // mocks_
 // hooks
 import useResponsive from '@/hooks/useResponsive';
+import { CustomTheme } from '@/theme/ThemeTypes';
 
 import sidebarConfig from './SidebarConfig';
 
@@ -32,7 +33,7 @@ const AccountStyle = styled('div')(({ theme }) => ({
   alignItems: 'center',
   padding: theme.spacing(2, 2.5),
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[500_12],
+  backgroundColor: (theme as CustomTheme).palette.grey[500_12],
 }));
 
 // ----------------------------------------------------------------------
