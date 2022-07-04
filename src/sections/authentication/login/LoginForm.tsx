@@ -61,8 +61,7 @@ export default function LoginForm({
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        sx={{ my: 2 }}
-      >
+        sx={{ my: 2 }}>
         <CustomCheckbox label="remember_me" name="remember" control={control} />
         <Link component={RouterLink} variant="subtitle2" to="#" underline="hover">
           <FormattedMessage id="forgot_password" />
@@ -74,8 +73,7 @@ export default function LoginForm({
         size="large"
         type="submit"
         variant="contained"
-        loading={isLoading}
-      >
+        loading={isLoading}>
         <FormattedMessage id="login" />
       </LoadingButton>
     </form>

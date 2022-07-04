@@ -31,8 +31,7 @@ export default function Accounts() {
               variant="contained"
               component={RouterLink}
               to="/dashboard/users/add"
-              startIcon={<Iconify icon="eva:plus-fill" />}
-            >
+              startIcon={<Iconify icon="eva:plus-fill" />}>
               <FormattedMessage id="new_user_account" />
             </Button>
           </div>

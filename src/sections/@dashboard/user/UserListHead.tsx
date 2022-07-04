@@ -54,8 +54,7 @@ export default function UserListHead({
           <TableCell
             key={headCell.id}
             align={headCell.alignRight ? 'right' : 'left'}
-            sortDirection={orderBy === headCell.id ? order : false}
-          >
+            sortDirection={orderBy === headCell.id ? order : false}>
             <TableSortLabel
               hideSortIcon
               active={orderBy === headCell.id}

@@ -21,8 +21,7 @@ function Link({ page, children }: any) {
       className={status}
       href={page || '#'}
       onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+      onMouseLeave={onMouseLeave}>
       {children}
     </a>
   );

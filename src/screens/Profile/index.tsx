@@ -17,10 +17,10 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import Iconify from '@/components/Iconify';
 import Page from '@/components/Page';
+import { CustomTheme } from '@/theme/ThemeTypes';
 
 import ChangePassword from './Partials/ChangePassword';
 import Settings from './Partials/Settings';
-import { CustomTheme } from '@/theme/ThemeTypes';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -32,8 +32,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
+      {...other}>
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -170,8 +169,7 @@ export default function Profile() {
           variant="contained"
           component={RouterLink}
           to="/dashboard/profile/edit"
-          startIcon={<Iconify icon="eva:edit-2-outline" />}
-        >
+          startIcon={<Iconify icon="eva:edit-2-outline" />}>
           <FormattedMessage id="edit_account" />
         </Button>
       </EditSectionStyle>

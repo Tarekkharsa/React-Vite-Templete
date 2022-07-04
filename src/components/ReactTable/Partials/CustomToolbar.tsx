@@ -39,8 +39,7 @@ export default function CustomToolbar({
           color: 'primary.main',
           bgcolor: 'primary.lighter',
         }),
-      }}
-    >
+      }}>
       {numSelected > 0 ? (
         <Typography component="div" variant="subtitle1">
           {numSelected} <FormattedMessage id="selected" />

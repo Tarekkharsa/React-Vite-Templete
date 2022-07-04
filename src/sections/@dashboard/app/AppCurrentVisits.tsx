@@ -1,11 +1,11 @@
 // material
 import { Card, CardHeader } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
+//
+import { ApexOptions } from 'apexcharts';
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 
-//
-import { ApexOptions } from 'apexcharts';
 import { BaseOptionChart } from '@/components/charts';
 // utils
 import { fNumber } from '@/utils/formatNumber';

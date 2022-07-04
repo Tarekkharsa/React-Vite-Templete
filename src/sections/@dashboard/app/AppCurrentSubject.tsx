@@ -1,12 +1,12 @@
 import { Card, CardHeader } from '@mui/material';
 // material
 import { styled, useTheme } from '@mui/material/styles';
+import { ApexOptions } from 'apexcharts';
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 
 //
 import { BaseOptionChart } from '../../../components/charts';
-import { ApexOptions } from 'apexcharts';
 
 // ----------------------------------------------------------------------
 

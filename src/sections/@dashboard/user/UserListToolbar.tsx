@@ -8,8 +8,8 @@ import {
 } from '@mui/material';
 // material
 import { styled } from '@mui/material/styles';
-
 import * as React from 'react';
+
 import { CustomTheme } from '@/theme/ThemeTypes';
 
 // component
@@ -59,8 +59,7 @@ export default function UserListToolbar({
           color: 'primary.main',
           bgcolor: 'primary.lighter',
         }),
-      }}
-    >
+      }}>
       {numSelected > 0 ? (
         <Typography component="div" variant="subtitle1">
           {numSelected} selected

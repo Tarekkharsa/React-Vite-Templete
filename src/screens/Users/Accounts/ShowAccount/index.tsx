@@ -83,8 +83,7 @@ export default function ShowAccount() {
             variant="contained"
             component={RouterLink}
             to="/dashboard/users/accounts/1/edit"
-            startIcon={<Iconify icon="eva:edit-fill" />}
-          >
+            startIcon={<Iconify icon="eva:edit-fill" />}>
             <FormattedMessage id="edit_user" />
           </Button>
         </Stack>
