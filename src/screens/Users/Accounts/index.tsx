@@ -17,7 +17,7 @@ import { tableColumns, tableHiddenColumns } from './data';
 export default function Accounts() {
   const columns = useMemo(() => tableColumns, []);
   const hiddenColumns = useMemo(() => tableHiddenColumns, []);
-  const data = [];
+  const data: string | any[] = [];
 
   return (
     <Page title="Users | Accounts">

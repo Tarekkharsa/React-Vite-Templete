@@ -8,15 +8,19 @@ const Root = styled('div')(({ theme }) => ({
   marginLeft: theme.spacing(2.5),
 }));
 
-type EventType = React.MouseEvent<HTMLButtonElement, MouseEvent>;
-type TablePaginationActionsProps = {
+// type TablePaginationActionsProps = {
+//   count: number;
+//   page: number;
+//   rowsPerPage: number;
+//   onChangePage: (event: EventType, page: number) => void;
+// };
+type EventType = React.MouseEvent<HTMLButtonElement>;
+interface TablePaginationActionsProps {
   count: number;
   page: number;
   rowsPerPage: number;
-  // rowsPerPageOptions: number[];
-  // colSpan: number;
-  onChangePage: (event: EventType, page: number) => void;
-};
+  onChangePage: (event: EventType, newPage: number) => void;
+}
 function TablePaginationActions(props: TablePaginationActionsProps) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onChangePage } = props;

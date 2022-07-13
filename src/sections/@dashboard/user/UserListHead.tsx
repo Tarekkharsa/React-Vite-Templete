@@ -22,7 +22,7 @@ type UserListHeadProps = {
   }[];
   numSelected: number;
   onRequestSort: Function;
-  onSelectAllClick: Function;
+  onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 type EventType = React.MouseEvent<HTMLButtonElement, MouseEvent>;

@@ -44,9 +44,9 @@ const CustomFormControl = styled(FormControl)(({ theme }) => ({
   marginRight: theme.direction === 'rtl' ? '10px' : 'unset',
 }));
 
-const IndeterminateCheckbox = forwardRef(({ indeterminate, ...rest }, ref) => {
+const IndeterminateCheckbox = forwardRef(({ indeterminate, ...rest }: any, ref) => {
   const defaultRef = useRef();
-  const resolvedRef = ref || defaultRef;
+  const resolvedRef: any = ref || defaultRef;
 
   useEffect(() => {
     resolvedRef.current.indeterminate = indeterminate;
@@ -77,7 +77,7 @@ function ReactTable({
     setPageSize,
     state: { pageIndex, pageSize, selectedRowIds, globalFilter },
     selectedFlatRows,
-  } = useTable(
+  }: any = useTable(
     {
       columns,
       data: tableData,
@@ -96,12 +96,12 @@ function ReactTable({
           {
             id: 'selection',
             // eslint-disable-next-line
-            Header: ({ getToggleAllPageRowsSelectedProps }) => (
+            Header: ({ getToggleAllPageRowsSelectedProps }: any) => (
               <IndeterminateCheckbox {...getToggleAllPageRowsSelectedProps()} />
             ),
             // eslint-disable-next-line
-            Cell: ({ row }) => (
-              <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
+            Cell: ({ row }: any) => (
+              <IndeterminateCheckbox {...row?.getToggleRowSelectedProps()} />
             ),
             style: {
               padding: '0 0 0 4px',
@@ -122,11 +122,11 @@ function ReactTable({
     getSelectedRows && getSelectedRows({ selectedRowIds, selectedFlatRows });
   }, [getSelectedRows, selectedRowIds, selectedFlatRows]);
 
-  const handleChangePage = (newPage) => {
+  const handleChangePage = (newPage: any) => {
     gotoPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = (event: any) => {
     setPageSize(parseInt(event.target.value, 10));
     gotoPage(0);
   };
@@ -144,9 +144,9 @@ function ReactTable({
       <TableContainer sx={{ minWidth: 800 }}>
         <Table {...getTableProps()}>
           <TableHead>
-            {headerGroups.map((headerGroup) => (
+            {headerGroups.map((headerGroup: any) => (
               <TableRow {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
+                {headerGroup.headers.map((column: any) => (
                   <TableCell
                     sx={column?.style ? column?.style : null}
                     {...column.getHeaderProps()}>
@@ -161,11 +161,11 @@ function ReactTable({
             ))}
           </TableHead>
           <TableBody {...getTableBodyProps()}>
-            {page.map((row) => {
+            {page.map((row: any) => {
               prepareRow(row);
               return (
                 <TableRow {...row.getRowProps()}>
-                  {row.cells.map((cell) => {
+                  {row.cells.map((cell: any) => {
                     return (
                       <TableCell
                         sx={cell.column?.style ? cell.column?.style : null}
@@ -202,7 +202,7 @@ function ReactTable({
                   onChange={(e) => {
                     gotoPage(e.target.value ? Number(e.target.value) - 1 : 0);
                   }}>
-                  {pageOptions.map((pageSizeOptions) => (
+                  {pageOptions.map((pageSizeOptions: any) => (
                     <MenuItem key={pageSizeOptions} value={pageSizeOptions + 1}>
                       {pageSizeOptions + 1}
                     </MenuItem>

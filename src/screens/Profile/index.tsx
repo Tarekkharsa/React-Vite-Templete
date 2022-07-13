@@ -22,7 +22,12 @@ import { CustomTheme } from '@/theme/ThemeTypes';
 import ChangePassword from './Partials/ChangePassword';
 import Settings from './Partials/Settings';
 
-function TabPanel(props) {
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -88,7 +93,7 @@ const CustomListItem = styled(ListItem)(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-}));
+})) as any;
 
 export default function Profile() {
   const user = {
@@ -101,7 +106,7 @@ export default function Profile() {
   };
   const [value, setValue] = useState(0);
 
-  const handleChange = (newValue) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 

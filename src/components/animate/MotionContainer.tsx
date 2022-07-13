@@ -10,6 +10,7 @@ import { varWrapEnter } from './variants';
 type MotionContainerProps = {
   open: boolean;
   children: React.ReactNode;
+  initial?: string;
 };
 export default function MotionContainer({
   open,

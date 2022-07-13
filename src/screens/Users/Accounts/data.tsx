@@ -18,7 +18,7 @@ export const tableColumns = [
     style: {
       padding: '10px',
     },
-    Cell: ({ row }) => {
+    Cell: ({ row }: any) => {
       return (
         <Stack direction="row" alignItems="center" spacing={2}>
           <Avatar alt={row.original.firstname} src={row.original.image} />

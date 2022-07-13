@@ -59,7 +59,7 @@ const CustomListItem = styled(ListItem)(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-}));
+})) as any;
 
 export default function ShowAccount() {
   const user = {
